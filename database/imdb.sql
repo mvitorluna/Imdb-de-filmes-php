@@ -1,3 +1,10 @@
+-- Banco do projeto IMDB de Filmes
+-- Eduardo - tarefa Banco, PDO & Classes Model
+--
+-- Acesso (XAMPP): host=localhost, banco=imdb, usuario=root, senha=(vazia)
+-- Importar:  mysql -u root -p < database/imdb.sql   (ou pelo phpMyAdmin)
+-- Depois rodar database/criar_admin.php pra criar o admin.
+
 CREATE DATABASE IF NOT EXISTS imdb
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_general_ci;
@@ -41,6 +48,7 @@ CREATE TABLE avaliacoes (
     filme_id   INT NOT NULL,
     usuario_id INT DEFAULT NULL,
     nota       DECIMAL(3,1) NOT NULL,
+    CONSTRAINT chk_nota CHECK (nota >= 0 AND nota <= 10),
     CONSTRAINT fk_aval_filme   FOREIGN KEY (filme_id)   REFERENCES filmes(id)   ON DELETE CASCADE,
     CONSTRAINT fk_aval_usuario FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE SET NULL
 ) ENGINE=InnoDB;
