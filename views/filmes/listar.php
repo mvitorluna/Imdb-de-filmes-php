@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/../../config/bootstrap.php';
 require_once __DIR__ . '/../../functions/filmes_functions.php';
 
 $busca  = isset($_GET['busca'])  ? trim($_GET['busca'])  : '';

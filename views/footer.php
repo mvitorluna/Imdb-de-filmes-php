@@ -1,7 +1,7 @@
 </main>
 
 <footer>
-    <p>Locadora &copy; 2025</p>
+    <p>IMDB de Filmes &copy; 2026</p>
 </footer>
 
 </body>
